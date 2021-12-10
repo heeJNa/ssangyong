@@ -1,4 +1,4 @@
-package com.sist.main;
+package com.sist.main2;
 
 /*
  *    사용자가 년도/월 입력 ==> 
@@ -33,7 +33,7 @@ import java.util.*;
  *       }
  *    }
  */
-public class MainClass6 {
+public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -1,4 +1,4 @@
-package com.sist.main;
+package com.sist.main2;
 
 /*
  *    자바 구조 
@@ -157,93 +157,94 @@ package com.sist.main;
 // 입력 
 import java.util.*; // Scanner => IO (BufferedReader)
 // IO => System.in(키보드 입력값을 읽을 경우에),System.out(화면 출력)
-class MyDate
-{
-   // 데이터 변질 => 은닉화 (MyDate에서 사용하는 변수)
-   private int year,month,week;
-   private int[] lastday={31,28,31,30,31,30,
-		                  31,31,30,31,30,31}; // 각달의 마지막 날짜
-   // 사용자 입력 
-   // 메소드 => 구조화 (단락) , 반복 제거 , 한가지 기능을 수행 
-   public int input(String msg) // 년도 , 월
-   {
-	   Scanner scan=new Scanner(System.in);
-	   System.out.print(msg+" 입력:");
-	   return scan.nextInt();
-   }
-   // 1일자의 요일을 생성 
-   public int getWeek()
-   {
-	   int week=0;
-	   // 1. 전년도까지의 총날수 (1년도 1일 => 월) ==> %7
-	   int total= (year-1)*365
-			     +(year-1)/4
-			     -(year-1)/100
-			     +(year-1)/400; // 윤년 계산법 
-	   // 2. 전달까지의 총날수 
-	   if((year%4==0 && year%100!=0)||(year%400==0))// 윤년이라면 
-		   lastday[1]=29; // 2월달 
-	   else
-		   lastday[1]=28;
-	   
-	   for(int i=0;i<month-1;i++)
-	   {
-		   total+=lastday[i];
-	   }
-	   // 3. +1
-	   total++;
-	   
-	   // ===================== 요청한 날짜의 1일자의 요일 확인 가능 
-	   week=total%7;
-	   return week;
-   }
-   // 사용자가 요청한 달력을 보여준다 
-   public void datePrint()
-   {
-	   String[] strWeek={"일","월","화","수","목","금","토"};
-	   for(String s:strWeek)
-	   {
-		   System.out.print(s+"\t");
-	   }
-	   System.out.println("\n");
-	   //System.out.println(month);
-	   for(int i=1;i<=lastday[month-1];i++)
-	   {
-		   if(i==1) // 첫줄에 공백 
-		   {
-			   for(int j=0;j<week;j++)
-			   {
-				   System.out.print("\t");
-			   }
-		   }
-		   System.out.printf("%2d\t",i); // 달력 출력 
-		   week++;
-		   if(week>6) // 토요일이면 
-		   {
-			   week=0; //일요일로 변경 
-			   System.out.println(); // 다음줄에 출력 
-		   }
-	   }
-   }
-   // 조립 => 기능없이 함쳐준다 
-   public void process() // 조립후 출력 => 결과값이 없다 (void)
-   {
-	   // 사용자 요청값 받기 
-	   year=input("년도");
-	   month=input("월");
-	   System.out.println(year+"년도 "+month+"월");
-	   week=getWeek();
-	   datePrint();
-	   
-   }
-	
+
+class MyDate {
+	// 데이터 변질 => 은닉화 (MyDate에서 사용하는 변수)
+	private int year, month, week;
+	private int[] lastday = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; // 각달의 마지막 날짜
+	// 사용자 입력
+	// 메소드 => 구조화 (단락) , 반복 제거 , 한가지 기능을 수행
+
+	public int input(String msg) // 년도 , 월
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.print(msg + " 입력:");
+		return scan.nextInt();
+	}
+
+	// 1일자의 요일을 생성
+	public int getWeek() {
+		int week = 0;
+		// 1. 전년도까지의 총날수 (1년도 1일 => 월) ==> %7
+		int total = (year - 1) * 365 + (year - 1) / 4 - (year - 1) / 100 + (year - 1) / 400; // 윤년 계산법
+		// 2. 전달까지의 총날수
+		if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))// 윤년이라면
+			lastday[1] = 29; // 2월달
+		else
+			lastday[1] = 28;
+
+		for (int i = 0; i < month - 1; i++) {
+			total += lastday[i];
+		}
+		// 3. +1
+		total++;
+
+		// ===================== 요청한 날짜의 1일자의 요일 확인 가능
+		week = total % 7;
+		return week;
+	}
+
+	// 사용자가 요청한 달력을 보여준다
+	public void datePrint() {
+		String[] strWeek = { "일", "월", "화", "수", "목", "금", "토" };
+		for (String s : strWeek) {
+			System.out.print(s + "\t");
+		}
+		System.out.println("\n");
+		// System.out.println(month);
+		for (int i = 1; i <= lastday[month - 1]; i++) {
+			if (i == 1) // 첫줄에 공백
+			{
+				for (int j = 0; j < week; j++) {
+					System.out.print("\t");
+				}
+			}
+			System.out.printf("%2d\t", i); // 달력 출력
+			week++;
+			if (week > 6) // 토요일이면
+			{
+				week = 0; // 일요일로 변경
+				System.out.println(); // 다음줄에 출력
+			}
+		}
+	}
+
+	// 조립 => 기능없이 함쳐준다
+	public void process() // 조립후 출력 => 결과값이 없다 (void)
+	{
+		// 사용자 요청값 받기
+		while (true) {
+			year = input("년도");
+			month = input("월");
+			if (month < 0 || month > 12) {
+				continue;
+			}else
+				break;
+		}
+		System.out.println(year + "년도 " + month + "월");
+		week = getWeek();
+		datePrint();
+
+	}
+
 }
-public class MainClass8 {
+
+public class MainClass3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        // 1. 메모리 할당 
-		MyDate md=new MyDate();
+		// 1. 메모리 할당
+		MyDate md = new MyDate();
 		md.process();
 	}
 

@@ -1,4 +1,4 @@
-package com.sist.main;
+package com.sist.main2;
 
 /*
  *    main() => Á¶¸³±â 
@@ -23,7 +23,7 @@ class DateClass {
 	 */
 }
 
-public class MainClass7 {
+public class MainClass2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
