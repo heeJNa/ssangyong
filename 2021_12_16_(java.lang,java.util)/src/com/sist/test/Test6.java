@@ -35,7 +35,7 @@ public class Test6 {
 				break;
 			}
 		} catch (Exception e) {
-			System.out.println("숫자를 입력하시오");
+			System.out.println("정수를 입력하시오");
 			e.printStackTrace();
 		}
 	}

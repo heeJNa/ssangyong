@@ -14,7 +14,7 @@ public class Test2 {
 				System.out.println(input + "는(은) 3의 배수가 아입니다.");
 			}
 		} catch (Exception e) {
-			System.out.println("숫자를 입력하시오");
+			System.out.println("정수를 입력하시오");
 			e.printStackTrace();
 		}
 	}

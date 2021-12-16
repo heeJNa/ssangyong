@@ -39,7 +39,7 @@ public class Test7 {
 			System.out.println("0으로 나눌 수 없습니다");
 			e.printStackTrace();
 		}catch (Exception e) {
-			System.out.println("숫자를 입력하시오");
+			System.out.println("정수를 입력하시오");
 			e.printStackTrace();
 		}
 	}

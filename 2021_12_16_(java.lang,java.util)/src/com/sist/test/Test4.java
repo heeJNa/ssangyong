@@ -18,7 +18,7 @@ public class Test4 {
 				System.out.println(input+"년도는 윤년이 아닙니다.");
 			}
 		} catch (Exception e) {
-			System.out.println("숫자를 입력하시오");
+			System.out.println("정수를 입력하시오");
 			e.printStackTrace();
 		}
 	}
