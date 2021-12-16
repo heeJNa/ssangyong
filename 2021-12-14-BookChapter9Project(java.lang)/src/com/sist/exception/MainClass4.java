@@ -3,8 +3,8 @@ package com.sist.exception;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-// finally => close() , íŒŒì¼ , ì„œë²„ , ë°ì´í„°ë² ì´ìŠ¤
-// try , catch ìˆ˜í–‰ê³¼ ê´€ë ¨ì—†ì´ ë¬´ì¡°ê±´ ìˆ˜í–‰í•˜ëŠ” ë¬¸ì¥
+// finally => close() , ÆÄÀÏ , ¼­¹ö , µ¥ÀÌÅÍº£ÀÌ½º
+// try , catch ¼öÇà°ú °ü·Ã¾øÀÌ ¹«Á¶°Ç ¼öÇàÇÏ´Â ¹®Àå
 public class MainClass4 {
 
     /*public static void main(String[] args) throws IOException {
@@ -40,7 +40,7 @@ public class MainClass4 {
                 System.out.print((char) i);
             }
         }
-//        tryë¸”ëŸ­ì„ ë²—ì–´ë‚˜ë©´ ìë™ìœ¼ë¡œ close()ê°€ í˜¸ì¶œ
+//        tryºí·°À» ¹ş¾î³ª¸é ÀÚµ¿À¸·Î close()°¡ È£Ãâ
         catch (FileNotFoundException e) {
         } catch (IOException e) {
         }

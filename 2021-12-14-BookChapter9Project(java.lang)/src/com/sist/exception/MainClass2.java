@@ -1,40 +1,41 @@
 package com.sist.exception;
-// ì‹¤ì œ ì„ ì–¸ë˜ì–´ ìžˆëŠ” ì†ŒìŠ¤
+
+//½ÇÁ¦ ¼±¾ðµÇ¾î ÀÖ´Â ¼Ò½º
 /*
- *     ë©”ì†Œë“œ() throws ì˜ˆì™¸ì²˜ë¦¬ê°€ ì—¬ëŸ¬ê°œ ....
- *
- *     => í˜¸ì¶œì‹œì— ì˜ˆì™¸ì²˜ë¦¬ë¥¼ í•˜ê³  ì‚¬ìš©
- *        1. ë©”ì†Œë“œ() throws (í†µí•©:Exception,Throwable)
- *        2. ë©”ì†Œë“œ()
- *           {
- *              try
- *              {
- *              }catch(Exception,Throwable){}
- *           }
- */
+*     ¸Þ¼Òµå() throws ¿¹¿ÜÃ³¸®°¡ ¿©·¯°³ ....
+*
+*     => È£Ãâ½Ã¿¡ ¿¹¿ÜÃ³¸®¸¦ ÇÏ°í »ç¿ë
+*        1. ¸Þ¼Òµå() throws (ÅëÇÕ:Exception,Throwable)
+*        2. ¸Þ¼Òµå()
+*           {
+*              try
+*              {
+*              }catch(Exception,Throwable){}
+*           }
+*/
 public class MainClass2 {
-    //ì„ ì–¸ (ë¼ì´ë¸ŒëŸ¬ë¦¬) => ì˜¤ë¼í´
-    String name;
-    //í´ëž˜ìŠ¤ì´ë¦„ìœ¼ë¡œ ë©”ëª¨ë¦¬ í• ë‹¹ì´ ê°€ëŠ¥(ë¦¬í”Œë ‰ì…˜)
-    //ìŠ¤í”„ë§ => í´ëž˜ìŠ¤ ì´ë¦„ì„ ì œê³µí•˜ë©´ => ë©”ëª¨ë¦¬ í• ë‹¹ (í´ëž˜ìŠ¤ ê´€ë¦¬)
-    //ìŠ¤í”„ë§ => í´ëž˜ìŠ¤ ê´€ë¦¬
-    public static MainClass2 createClass() throws Exception {
-        Class clsName = Class.forName("eception.main.MainClass2");
-        Object obj = clsName.getDeclaredConstructor().newInstance();
-        return (MainClass2)obj;
-        //ê²°í•©ì„±(ë‹¤ë¥¸ì˜í–¥ì´ ìžˆëŠ”ì§€ ì—¬ë¶€), ì‘ì§‘ì„±(ë©”ì†Œë“œ)
-    }
-    //ì´ë¯¸ ì½”ë“œê°€ ë˜ì–´ ìžˆëŠ” ìƒíƒœ => throws (ìœ ì§€ë³´ìˆ˜)
-    //ì½”ë“œê°€ ì—†ëŠ” ìƒíƒœ =>try~catch (ê°œë°œ)
-    public static void main(String[] args) {
-        try {
-            MainClass2 m = createClass();  //ë°˜ë“œì‹œ ì˜ˆì™¸ì²˜ë¦¬ê°€ ì¡´ìž¬í•œë‹¤
-            m.name = "í™ê¸¸ë™";
-            System.out.println(m.name);
-        //try~catch
-        //ì„ ì–¸ throws
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+ //¼±¾ð (¶óÀÌºê·¯¸®) => ¿À¶óÅ¬
+ String name;
+ //Å¬·¡½ºÀÌ¸§À¸·Î ¸Þ¸ð¸® ÇÒ´çÀÌ °¡´É(¸®ÇÃ·º¼Ç)
+ //½ºÇÁ¸µ => Å¬·¡½º ÀÌ¸§À» Á¦°øÇÏ¸é => ¸Þ¸ð¸® ÇÒ´ç (Å¬·¡½º °ü¸®)
+ //½ºÇÁ¸µ => Å¬·¡½º °ü¸®
+ public static MainClass2 createClass() throws Exception {
+     Class clsName = Class.forName("eception.main.MainClass2");
+     Object obj = clsName.getDeclaredConstructor().newInstance();
+     return (MainClass2)obj;
+     //°áÇÕ¼º(´Ù¸¥¿µÇâÀÌ ÀÖ´ÂÁö ¿©ºÎ), ÀÀÁý¼º(¸Þ¼Òµå)
+ }
+ //ÀÌ¹Ì ÄÚµå°¡ µÇ¾î ÀÖ´Â »óÅÂ => throws (À¯Áöº¸¼ö)
+ //ÄÚµå°¡ ¾ø´Â »óÅÂ =>try~catch (°³¹ß)
+ public static void main(String[] args) {
+     try {
+         MainClass2 m = createClass();  //¹Ýµå½Ã ¿¹¿ÜÃ³¸®°¡ Á¸ÀçÇÑ´Ù
+         m.name = "È«±æµ¿";
+         System.out.println(m.name);
+     //try~catch
+     //¼±¾ð throws
+     } catch (Exception e) {
+         e.printStackTrace();
+     }
+ }
 }
