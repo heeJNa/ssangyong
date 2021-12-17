@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/2021-12-14-BookChapter9Project(java.lang)/2021-12-14-BookChapter9Project(java.lang).iml" filepath="$PROJECT_DIR$/2021-12-14-BookChapter9Project(java.lang)/2021-12-14-BookChapter9Project(java.lang).iml" />
+      <module fileurl="file://$PROJECT_DIR$/2021_12_15_BookChapter9Project(lib-java-lang)/2021_12_15_BookChapter9Project(lib-java-lang).iml" filepath="$PROJECT_DIR$/2021_12_15_BookChapter9Project(lib-java-lang)/2021_12_15_BookChapter9Project(lib-java-lang).iml" />
+      <module fileurl="file://$PROJECT_DIR$/2021_12_16_(java.lang,java.util)/2021_12_16_(java.lang,java.util).iml" filepath="$PROJECT_DIR$/2021_12_16_(java.lang,java.util)/2021_12_16_(java.lang,java.util).iml" />
+      <module fileurl="file://$PROJECT_DIR$/AppJavaPro/AppJavaPro.iml" filepath="$PROJECT_DIR$/AppJavaPro/AppJavaPro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewBasic/NewBasic.iml" filepath="$PROJECT_DIR$/NewBasic/NewBasic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ssangyong.iml" filepath="$PROJECT_DIR$/.idea/ssangyong.iml" />
+    </modules>
+  </component>
+</project>

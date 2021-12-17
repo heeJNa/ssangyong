@@ -29,7 +29,7 @@ public class MainClass2 {
 		// int j=i.intValue() ==> 1.5 자동 추가
 		System.out.println("i=" + i);
 		System.out.println("j=" + j);
-
+		//double
 		Double d1 = 10.5;
 		double d2 = d1;// 클래스가 가지고 있는 데이터 ==> 일반데이터형에 대입 (언박싱)
 
