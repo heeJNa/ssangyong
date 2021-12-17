@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/2021_11_BookChapter8/2021_11_BookChapter8.iml" filepath="$PROJECT_DIR$/2021_11_BookChapter8/2021_11_BookChapter8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2021_11_Java/2021_11_Java.iml" filepath="$PROJECT_DIR$/2021_11_Java/2021_11_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2021_12_14_BookChapter9(java_lang)/2021_12_14_BookChapter9(java_lang).iml" filepath="$PROJECT_DIR$/2021_12_14_BookChapter9(java_lang)/2021_12_14_BookChapter9(java_lang).iml" />
+      <module fileurl="file://$PROJECT_DIR$/2021_12_15_BookChapter9(java_lang)/2021_12_15_BookChapter9(java_lang).iml" filepath="$PROJECT_DIR$/2021_12_15_BookChapter9(java_lang)/2021_12_15_BookChapter9(java_lang).iml" />
+      <module fileurl="file://$PROJECT_DIR$/2021_12_16_(java_lang, java_util)/2021_12_16_(java_lang, java_util).iml" filepath="$PROJECT_DIR$/2021_12_16_(java_lang, java_util)/2021_12_16_(java_lang, java_util).iml" />
+      <module fileurl="file://$PROJECT_DIR$/2021_12_17_BookChapter11(Collection_List)/2021_12_17_BookChapter11(Collection_List).iml" filepath="$PROJECT_DIR$/2021_12_17_BookChapter11(Collection_List)/2021_12_17_BookChapter11(Collection_List).iml" />
+    </modules>
+  </component>
+</project>
