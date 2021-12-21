@@ -23,7 +23,7 @@ class SutdaCard{
     }
 }
 
-class Student extends SutdaCard{
+class Student {
     private String name;
     private  int ban;
     private  int no;
@@ -82,6 +82,9 @@ class Student extends SutdaCard{
 
 public class Test1 {
     public static void main(String[] args) {
+        SutdaCard s = new SutdaCard();
+        s.setNum(11);
+        System.out.println(s.getNum());
 
     }
 }
