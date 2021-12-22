@@ -111,7 +111,7 @@ public class MovieSystem {
     }
 
     //3. 찾기 => 영화가 여러개 있는 경우도 있다
-    public ArrayList<Movie> MovieFind(String title) {
+    ArrayList<Movie> MovieFind(String title) {
         ArrayList<Movie> mList = new ArrayList<>();
         // mList에 찾은 영화(Movie)를 모아서 넘겨준다.
         for (Movie m : list) {

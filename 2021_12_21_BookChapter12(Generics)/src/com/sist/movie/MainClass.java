@@ -46,7 +46,7 @@ public class MainClass {
             }
         }
     }
-    public int menu(){
+    int menu(){
         System.out.println("===== 메뉴 =====");
         System.out.println("1. 영화 목록 보기");
         System.out.println("2. 영화 상세 보기");

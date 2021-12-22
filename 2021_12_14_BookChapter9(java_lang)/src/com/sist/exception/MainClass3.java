@@ -11,7 +11,6 @@ import java.io.IOException;
 *    => 네트워크 입출력
 ==> 433page*/
 public class MainClass3 {
-
     public static void main(String[] args) {
         File dir = new File("/Users/kimheejun/");
         if (!dir.exists()){
