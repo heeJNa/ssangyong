@@ -10,39 +10,40 @@ import org.jsoup.select.Elements;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.StringTokenizer;
 
 public class BooksManager {
-    // ì˜¤ë¼í´ì— ì—°ê²° => BooksDAO
-    private BooksDAO dao = new BooksDAO(); // ë°ì´í„°ë¥¼ ì˜¤ë¼í´ì— ì¶”ê°€
+    // ¿À¶óÅ¬¿¡ ¿¬°á => BooksDAO
+    private BooksDAO dao = new BooksDAO(); // µ¥ÀÌÅÍ¸¦ ¿À¶óÅ¬¿¡ Ãß°¡
 
     public void booksGetData() {
-        // try~catch (ì˜ˆì™¸ë³µêµ¬), throws(ì˜ˆì™¸íšŒí”¼ => ì„ ì–¸)
-        // ì‚¬ì „ì— ì—ëŸ¬ë°œìƒì„ ì°¨ë‹¨í•˜ëŠ” í”„ë¡œê·¸ë¨ => ì—ëŸ¬ë¥¼ ì¡ì•„ì£¼ëŠ” ê²ƒì€ ì•„ë‹ˆê³ 
-        // ì—ëŸ¬ë‚œ ë¶€ë¶„ì„ ì í”„í•´ì„œ => ë‹¤ìŒë¬¸ì¥ìœ¼ë¡œ ì´ë™
-        // ì—ëŸ¬ë‚œ ë¶€ë¶„ì„ í™•ì¸ => getMessage(), printStackTrace()
+        // try~catch (¿¹¿Üº¹±¸), throws(¿¹¿ÜÈ¸ÇÇ => ¼±¾ğ)
+        // »çÀü¿¡ ¿¡·¯¹ß»ıÀ» Â÷´ÜÇÏ´Â ÇÁ·Î±×·¥ => ¿¡·¯¸¦ Àâ¾ÆÁÖ´Â °ÍÀº ¾Æ´Ï°í
+        // ¿¡·¯³­ ºÎºĞÀ» Á¡ÇÁÇØ¼­ => ´ÙÀ½¹®ÀåÀ¸·Î ÀÌµ¿
+        // ¿¡·¯³­ ºÎºĞÀ» È®ÀÎ => getMessage(), printStackTrace()
         try {
-            // íŒŒì¼ ì½ê¸° => ì €ì¥
+            // ÆÄÀÏ ÀĞ±â => ÀúÀå
             StringBuffer sb = new StringBuffer();
-            FileInputStream fis = new FileInputStream("/Users/kimheejun/Desktop/test/books.txt");
+            FileInputStream fis = new FileInputStream("c:\\Heejun\\books.txt");
             BufferedReader br =
-                    new BufferedReader(new InputStreamReader(fis));
-            // íŒŒì¼ ì „ì²´ë¥¼ ì½ì–´ì„œ => ì„ì‹œì €ì¥
+                    new BufferedReader(new InputStreamReader(fis, StandardCharsets.UTF_8));
+            // ÆÄÀÏ ÀüÃ¼¸¦ ÀĞ¾î¼­ => ÀÓ½ÃÀúÀå
             while (true) {
                 String data = br.readLine();
                 if (data == null) break;
                 sb.append(data);
             }
-//            System.out.println(sb.toString()); // ë©”ëª¨ë¦¬ì— ì €ì¥ëœ ë°ì´í„°ë¥¼ ì¶œë ¥
-            // <> => íƒœê·¸ ë³„ ë°ì´í„° ìˆ˜ì§‘
+//            System.out.println(sb.toString()); // ¸Ş¸ğ¸®¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ¸¦ Ãâ·Â
+            // <> => ÅÂ±× º° µ¥ÀÌÅÍ ¼öÁı
             // <div id="a"> => div#a  => div:eq(0)
             // <div class="b"> => div.b => div:eq(1)
             // <div> => HTML
-            // Jsoup => HTML parser => í•„ìš”í•œ ë°ì´í„°ë¥¼ ì°¾ì•„ì£¼ëŠ” ì—­í• 
+            // Jsoup => HTML parser => ÇÊ¿äÇÑ µ¥ÀÌÅÍ¸¦ Ã£¾ÆÁÖ´Â ¿ªÇÒ
             Document doc = Jsoup.parse(sb.toString());
             /*
-             *       connect() => ì‹¤ì œ URLì„ ì´ìš©í•´ì„œ ì›¹ì„œë²„ì— ì ‘ê·¼
-             *       parse() => HTMLë¬¸ìì—´, íŒŒì¼
+             *       connect() => ½ÇÁ¦ URLÀ» ÀÌ¿ëÇØ¼­ À¥¼­¹ö¿¡ Á¢±Ù
+             *       parse() => HTML¹®ÀÚ¿­, ÆÄÀÏ
              */
             Elements title = doc.select("h4.main-title");
             Elements poster = doc.select("div.book-list-image img");
@@ -53,8 +54,8 @@ public class BooksManager {
             Elements isbn = doc.select("div.book-info span.isbn");
             Elements tags = doc.select("div.book-info span.tag");
             /*
-            *       <div>ê°’</div> ==> text()
-            *       <img src ="ê°’"> ==> attr("src")
+            *       <div>°ª</div> ==> text()
+            *       <img src ="°ª"> ==> attr("src")
             * */
             for (int i = 0; i < title.size(); i++) {
                 String title_data = title.get(i).text();
@@ -64,7 +65,7 @@ public class BooksManager {
                 String isbn_data = isbn.get(i).text();
                 String tags_data = tags.get(i).text();
 
-                String cd =""; // sub-titleì´ ì—†ëŠ” ë°ì´í„°ë¥¼ ""ìœ¼ë¡œ ì„¤ì •
+                String cd =""; // sub-titleÀÌ ¾ø´Â µ¥ÀÌÅÍ¸¦ ""À¸·Î ¼³Á¤
                 try {
                     String content_data = content.get(i).text();
                     cd = content_data;
@@ -81,20 +82,20 @@ public class BooksManager {
                     String[] ss = price_data.split("\\|");
                     p=ss[2];
                 }
-                String au = author_data.substring(0,author_data.lastIndexOf("ì§€")).trim();
+                String au = author_data.substring(0,author_data.lastIndexOf("Áö")).trim();
                 String is = isbn_data.substring(isbn_data.indexOf(":")+1).trim();
 
-                System.out.println("ë²ˆí˜¸ : " + (i+1));
-                System.out.println("ì œëª© : " + title_data);
-                System.out.println("ì €ì : " + au);
-//                System.out.println("ê·¸ë¦¼ : " + poster_data);
-//                System.out.println("ì†Œê°œ : " + cd);
-//                System.out.println("ê°€ê²© : " + p);
-//                System.out.println("ë“±ë¡ì¼ : " + regdate_data);
-//                System.out.println("ISBN : " + isbn_data);
-//                System.out.println("íƒœê·¸ : " + tags_data);
+                System.out.println("¹øÈ£ : " + (i+1));
+                System.out.println("Á¦¸ñ : " + title_data);
+                System.out.println("ÀúÀÚ : " + au);
+                System.out.println("±×¸² : " + poster_data);
+                System.out.println("¼Ò°³ : " + cd);
+                System.out.println("°¡°İ : " + p);
+                System.out.println("µî·ÏÀÏ : " + regdate_data);
+                System.out.println("ISBN : " + isbn_data);
+                System.out.println("ÅÂ±× : " + tags_data);
 
-                // ì˜¤ë¼í´ì— ë°ì´í„° ì²¨ë¶€
+                // ¿À¶óÅ¬¿¡ µ¥ÀÌÅÍ Ã·ºÎ
                 Books book = new Books();
                 book.setNo(i+1);
                 book.setTitle(title_data);
@@ -108,10 +109,10 @@ public class BooksManager {
 
                 dao.dbInsert(book);
 
-                // ì½ì€ ì†ë„ != ì˜¤ë¼í´ ì €ì¥
+                // ÀĞÀº ¼Óµµ != ¿À¶óÅ¬ ÀúÀå
                 Thread.sleep(300);
             }
-            System.out.println("********* ì˜¤ë¼í´ ì €ì¥ ì™„ë£Œ!! *********");
+            System.out.println("********* ¿À¶óÅ¬ ÀúÀå ¿Ï·á!! *********");
         } catch (Exception e) {
             e.printStackTrace();
         }

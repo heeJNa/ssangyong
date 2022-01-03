@@ -10,7 +10,7 @@ public class BooksDAO implements DataBase {
     // 필요한 클래스 가지고 온다 => 포함 클래스
     private Connection conn; // 오라클 연결
     private PreparedStatement ps; // SQL문장을 전송
-    private final String url = "jdbc:oracle:thin:@db202112271622_medium?TNS_ADMIN=/Users/kimheejun/Documents/Wallet_DB202112271622"; //오라클 주소
+    private final String url = "jdbc:oracle:thin:@localhost:1523:XE"; //오라클 주소
     /*
     *       드라이버 => thin => 연결만 하는 역할 (무료)
     *                 oci  => 드라이버 안에 오라클 정보를 다 가지고 있다 (유료)
@@ -51,7 +51,7 @@ public class BooksDAO implements DataBase {
     public void getConnection() {
         // 오라클 연결, 파일 연결, 네트워크서버 연결 => CheckException
         try {
-            conn= DriverManager.getConnection(url,"admin","Gmlwnsskgus!@1208");
+            conn= DriverManager.getConnection(url,"system","1234");
         }catch (Exception e){
             e.printStackTrace(); // username , password
         }
